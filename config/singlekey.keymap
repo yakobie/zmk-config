@@ -8,8 +8,8 @@
         compatible = "zmk,keymap";
         
         default_layer {
-            bindings = 
-                &mkp LCLK;
+            bindings = <
+                &mkp LCLK
             >;
         };
     };
