@@ -9,7 +9,7 @@
         
         default_layer {
             bindings = 
-                &mkp LCLK
+                &mkp LCLK;
             >;
         };
     };
