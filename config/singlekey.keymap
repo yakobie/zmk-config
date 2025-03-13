@@ -8,13 +8,12 @@
         bt_clear_tap: bt_clear_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <280>;
+            tapping-term-ms = <5000>;  // 5 seconds for the hold action
             quick-tap-ms = <175>;
-            flavor = "tap-preferred";
+            flavor = "hold-preferred";  // Changed to hold-preferred for clear behavior
             bindings = <&bt>, <&mkp>;
             hold-trigger-key-positions = <0>;
             hold-trigger-on-release;
-            hold-time-ms = <5000>; // 5 seconds hold time
         };
     };
 
