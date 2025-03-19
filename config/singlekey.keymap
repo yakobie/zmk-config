@@ -4,22 +4,13 @@
 #include <dt-bindings/zmk/mouse.h>
 
 / {
-    behaviors {
-        ht: hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <3000>;
-            flavor = "tap-preferred";
-            bindings = <&bt>, <&mkp>;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
         
         default_layer {
             bindings = <
-                &lt 1 LCLK
+                &mkp LCLK    // First button: Mouse left click
+                &bt BT_CLR   // Second button: Bluetooth clear
             >;
         };
 
