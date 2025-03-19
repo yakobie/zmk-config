@@ -4,12 +4,23 @@
 #include <dt-bindings/zmk/mouse.h>
 
 / {
+    behaviors {
+        bt_clear_tap: bt_clear_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <5000>;  // 5 seconds hold time
+            quick-tap-ms = <175>;
+            flavor = "hold-preferred";
+            bindings = <&bt>, <&mkp>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
         
         default_layer {
             bindings = <
-                &mkp LCLK
+                &bt_clear_tap BT_CLR LCLK
             >;
         };
     };
