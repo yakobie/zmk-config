@@ -19,7 +19,13 @@
         
         default_layer {
             bindings = <
-                &ht BT_CLR LCLK
+                &lt 1 LCLK
+            >;
+        };
+
+        bt_layer {
+            bindings = <
+                &bt BT_CLR
             >;
         };
     };
