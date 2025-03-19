@@ -4,13 +4,17 @@
 #include <dt-bindings/zmk/mouse.h>
 
 / {
+    combos {
+        compatible = "zmk,combos";
+    };
+
     behaviors {
-        bt_clear_tap: bt_clear_tap {
+        hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
             #binding-cells = <2>;
-            tapping-term-ms = <5000>;  // 5 seconds hold time
-            quick-tap-ms = <175>;
-            flavor = "hold-preferred";
+            tapping-term-ms = <3000>;
+            flavor = "tap-preferred";
             bindings = <&bt>, <&mkp>;
         };
     };
@@ -20,7 +24,7 @@
         
         default_layer {
             bindings = <
-                &bt_clear_tap BT_CLR LCLK
+                &hm BT_CLR LCLK
             >;
         };
     };
